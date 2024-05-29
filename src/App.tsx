@@ -6,17 +6,17 @@ import TodoList from "./components/TodoList";
 const sampleData: ITodo[] = [
   {
     id: 1,
-    content: "🏃‍♀️ 달리기",
+    content: "🏋️‍♀️ 운동하기",
     isDone: false,
   },
   {
     id: 2,
-    content: "🏰 놀이동산가기",
+    content: "🗿 제주도가기",
     isDone: false,
   },
   {
     id: 3,
-    content: "🗿 제주도가기",
+    content: "🧠 리액트공부하기",
     isDone: false,
   },
 ];
@@ -26,7 +26,7 @@ const App: FC = () => {
 
   return (
     <Flex flexDir="column" minH="100vh">
-      <CreateTodo />
+      <CreateTodo todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} />
     </Flex>
   );

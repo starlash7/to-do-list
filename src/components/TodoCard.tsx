@@ -8,14 +8,14 @@ interface TodoCard {
 
 const TodoCard: FC<TodoCard> = ({ todo }) => {
   return (
-    <Flex bgColor="blue.100" px={4} py={2} rounded="lg" gap={1}>
+    <Flex bgColor="yellow.100" px={4} py={2} rounded="lg" gap={1}>
       <Text fontSize={20} w={48} isTruncated={true}>
         {todo.content}
       </Text>
-      <Button colorScheme="blue">
+      <Button colorScheme="green">
         <FiEdit3 />
       </Button>
-      <Button colorScheme="red">
+      <Button colorScheme="orange">
         <FiTrash2 />
       </Button>
     </Flex>
