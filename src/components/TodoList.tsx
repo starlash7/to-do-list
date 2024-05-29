@@ -1,12 +1,13 @@
 import { Flex } from "@chakra-ui/react";
-import { FC } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import TodoCard from "./TodoCard";
 
 interface TodoList {
   todos: ITodo[];
+  setTodos: Dispatch<SetStateAction<ITodo[]>>;
 }
 
-const TodoList: FC<TodoList> = ({ todos }) => {
+const TodoList: FC<TodoList> = ({ todos, setTodos }) => {
   return (
     <Flex
       bgColor="yellow.50"
@@ -17,7 +18,7 @@ const TodoList: FC<TodoList> = ({ todos }) => {
       gap={2}
     >
       {todos.map((v) => (
-        <TodoCard key={v.id} todo={v} />
+        <TodoCard key={v.id} todo={v} todos={todos} setTodos={setTodos} />
       ))}
     </Flex>
   );
